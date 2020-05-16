@@ -17,7 +17,7 @@ tableData.forEach((info) => {
 
   // Define buttons
 var button = d3.select("#filter-btn");
-var button1 = d3.select("#filter-btn0");
+var button1 = d3.select("#filter-btn11");
 var button2 = d3.select("#filter-btn1");
 var button3 = d3.select("#filter-btn2");
 var button4 = d3.select("#filter-btn3");
@@ -40,7 +40,7 @@ function filter0() {
 
 button.on("click", filter0);
 
-function filter1 (){
+button1.on("click", function (){
     d3.event.preventDefault();
     inputElement0 = d3.select("#city1");
     var inputValue0 = inputElement0.property("value");
@@ -50,10 +50,11 @@ function filter1 (){
         var row = tbody.append("tr");
         Object.entries(info).forEach(([key, value])=> {
             var cell = row.append("td");
-            cell.text(value);})})
-};
+            cell.text(value);
+        });
+    });
+});
 
-button1.on("click", filter1);
 
 function filter1(){
     d3.event.preventDefault();
